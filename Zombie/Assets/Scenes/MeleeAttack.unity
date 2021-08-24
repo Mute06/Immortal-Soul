@@ -283,26 +283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 47568943, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: particles.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 47568943, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: particles.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
-    - target: {fileID: 47568943, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: particles.Array.data[1]
-      value: 
-      objectReference: {fileID: 1000013355911406, guid: 532c8be46e6660e49a9e48ce60e82441, type: 3}
-    - target: {fileID: 47568943, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: particles.Array.data[2]
-      value: 
-      objectReference: {fileID: 1962516439210982, guid: 3c657dedc43d33a4987fbf09e6363067, type: 3}
-    - target: {fileID: 47568943, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: particles.Array.data[3]
-      value: 
-      objectReference: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
     - target: {fileID: 7085721664118310500, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
       propertyPath: m_RootOrder
       value: 0
