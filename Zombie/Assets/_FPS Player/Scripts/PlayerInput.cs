@@ -97,6 +97,7 @@ public class PlayerInput : MonoBehaviour
     }
 
 
+
     private Vector2 previous;
     private Vector2 _down;
 
