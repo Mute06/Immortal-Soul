@@ -54,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
                 GameObject partic = Instantiate(particles[Random.Range(0, particles.Length)], hitPosition,Quaternion.identity);
                 partic.transform.LookAt(transform);
                 partic.transform.SetParent(enemy.transform);
+                //BloodEffectManager.instance.CreateBloodEffect(hitPosition);
             }
         }
     }

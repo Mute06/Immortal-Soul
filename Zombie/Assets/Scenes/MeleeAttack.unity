@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 326766837}
   - component: {fileID: 326766836}
   - component: {fileID: 326766835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,46 +283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132148343056815, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181967636050110988, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.60046494
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181967636050110988, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.019083975
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181967636050110988, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.010652025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181967636050110988, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7993524
-      objectReference: {fileID: 0}
-    - target: {fileID: 2295181065195710923, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955269017166461230, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.72962636
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955269017166461230, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.01697491
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955269017166461230, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.009475153
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955269017166461230, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.68356967
-      objectReference: {fileID: 0}
     - target: {fileID: 7085721664118310500, guid: c2dc14f109b09a743b03757ef68006c7, type: 3}
       propertyPath: m_RootOrder
       value: 0
