@@ -95,11 +95,7 @@ namespace RPG.Attributes
 
         private void Die()
         {
-            if (isDead) 
-            {
-                
-                return; 
-            }
+            if (isDead) { return; }
             isDead = true;
             if (gameObject.CompareTag("Player"))
             {
@@ -109,15 +105,16 @@ namespace RPG.Attributes
             else
             {
                 GetComponent<CapsuleCollider>().enabled = false;
-                Destroy(gameObject);
+                
                 Debug.Log("Death");
             }
 
             
             if (!gameObject.CompareTag("Player"))
             {
-                //GetComponent<Animator>().SetTrigger("dead");
+                //GetComponent<Animator>().SetBool("isDead",true);
                 GetComponent<ActionScheduler>().CancelCurrentAction();
+                Destroy(gameObject);
             }
             
             
