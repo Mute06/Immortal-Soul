@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2280815742178442619}
   - component: {fileID: 7233342219878278861}
+  - component: {fileID: 4512952277695132216}
   m_Layer: 0
   m_Name: KeyCard
   m_TagString: Untagged
@@ -108,7 +109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507797102302488513}
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -7.6408157, y: 1, z: -23.118307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -128,8 +129,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4512952277695132216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507797102302488513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d1195e4eb756d4b9522bc6b7302b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: 0b42dc7eafb676a4b904b02630bffaf7, type: 2}
+  KeyImage: {fileID: 0}
 --- !u!1 &7079974675467981396
 GameObject:
   m_ObjectHideFlags: 0

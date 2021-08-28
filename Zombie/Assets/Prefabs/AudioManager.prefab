@@ -56,4 +56,10 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Damage
+    clip: {fileID: 8300000, guid: 9f9afb6c1a17aae4589ec9f42f5133d6, type: 3}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   mixer: {fileID: 24300002, guid: 01a9a56fad857074eb2c9d16a7f79147, type: 2}

@@ -104,12 +104,12 @@ namespace RPG.Attributes
             if (gameObject.CompareTag("Player"))
             {
                 GetComponent<CharacterController>().enabled = false;
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+                LevelLoader.instance.LoadScene(LevelLoader.instance.GetActiveSceneIndex());
             }
             else
             {
                 GetComponent<CapsuleCollider>().enabled = false;
-                Destroy(gameObject);
+                
                 Debug.Log("Death");
             }
 
@@ -118,6 +118,7 @@ namespace RPG.Attributes
             {
                 //GetComponent<Animator>().SetTrigger("dead");
                 GetComponent<ActionScheduler>().CancelCurrentAction();
+                Destroy(gameObject);
             }
             
             

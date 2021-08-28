@@ -15,8 +15,10 @@ namespace RPG.Combat
         [SerializeField] GameObject[] DestroyOnHit;
         [SerializeField] UnityEvent onHit;
         GameObject Instigator;
+        private HitEffects effects;
         void Start()
         {
+            effects = GetComponent<HitEffects>();
             if (!isHoming)
             {
                 transform.LookAt(GetAimLocation());
@@ -55,8 +57,10 @@ namespace RPG.Combat
             if (other.GetComponent<Health>() != target) { return; }
             if (target.IsDead()) { return; }
             target.TakeDamage(Instigator,damage);
-
-
+            if (other.CompareTag("Player"))
+            {
+                effects.PlayEffects(other.transform);
+            }
             onHit.Invoke();
 
             if(fireBallEffect !=null)
