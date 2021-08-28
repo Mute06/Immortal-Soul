@@ -95,6 +95,10 @@ public class PlayerInput : MonoBehaviour
     { 
         get { return Input.GetAxisRaw("Mouse ScrollWheel"); }
     }
+    public bool jumpButtonPressed
+    {
+        get { return Input.GetButtonDown("Jump"); }
+    }
 
 
 

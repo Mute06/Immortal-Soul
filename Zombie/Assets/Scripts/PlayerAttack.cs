@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Attributes;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -46,16 +47,37 @@ public class PlayerAttack : MonoBehaviour
 
         if (hitEnemies != null)
         {
+            if (hitEnemies.Length <= 0)
+            {
+                AudioManager.instance.PlaySound("Hit Air");
+                return;
+            }
+            else
+            {
+                AudioManager.instance.PlaySound("Hit");
+            }
             foreach (var enemy in hitEnemies)
             {
                 Debug.Log("We Hit" + enemy.name);
-                enemy.GetComponent<EnemyHealth>().TakeDamage(AttackDamage);
+                var healthScript = enemy.GetComponent<Health>();
+                if (healthScript != null)
+                    healthScript.TakeDamage(null, AttackDamage);
+                else
+                {
+                    var enemyHealthScript = enemy.GetComponent<EnemyHealth>();
+                    if (enemyHealthScript != null)
+                    {
+                        enemyHealthScript.TakeDamage(AttackDamage);
+                    }
+                }
                 Vector3 hitPosition = enemy.ClosestPointOnBounds(attackPoint.position);
                 GameObject partic = Instantiate(particles[Random.Range(0, particles.Length)], hitPosition,Quaternion.identity);
                 partic.transform.LookAt(transform);
                 partic.transform.SetParent(enemy.transform);
+                
                 //BloodEffectManager.instance.CreateBloodEffect(hitPosition);
             }
+            
         }
     }
 
