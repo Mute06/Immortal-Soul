@@ -44,24 +44,24 @@ namespace RPG.Scenemanagemnt
             //savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();            
-            UpdatePlayer(otherPortal);
+            //UpdatePlayer(otherPortal);
 
             //savingWrapper.Save();
 
             yield return new WaitForSeconds(0.5f);
             yield return fader.FadeIn(Fadeout_IN_Time);
 
-            NewplayerController.enabled = true;
+            //NewplayerController.enabled = true;
             Destroy(gameObject);
         }
 
         private void UpdatePlayer(Portal otherPortal)
         {
             GameObject Player = GameObject.FindGameObjectWithTag("Player");
-            Player.GetComponent<NavMeshAgent>().enabled = false;
-            Player.transform.position=otherPortal.SpawnPoint.position;
-            Player.transform.rotation = otherPortal.SpawnPoint.rotation;
-            Player.GetComponent<NavMeshAgent>().enabled = true;
+            //Player.GetComponent<NavMeshAgent>().enabled = false;
+            //Player.transform.position=otherPortal.SpawnPoint.position;
+            //Player.transform.rotation = otherPortal.SpawnPoint.rotation;
+            //Player.GetComponent<NavMeshAgent>().enabled = true;
         }
 
         private Portal GetOtherPortal()

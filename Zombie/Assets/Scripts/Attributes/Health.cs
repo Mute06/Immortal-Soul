@@ -100,8 +100,8 @@ namespace RPG.Attributes
                 
                 return; 
             }
-
-            if(gameObject.CompareTag("Player"))
+            isDead = true;
+            if (gameObject.CompareTag("Player"))
             {
                 GetComponent<CharacterController>().enabled = false;
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
@@ -109,12 +109,14 @@ namespace RPG.Attributes
             else
             {
                 GetComponent<CapsuleCollider>().enabled = false;
+                Destroy(gameObject);
+                Debug.Log("Death");
             }
 
-            isDead = true;
+            
             if (!gameObject.CompareTag("Player"))
             {
-                GetComponent<Animator>().SetTrigger("dead");
+                //GetComponent<Animator>().SetTrigger("dead");
                 GetComponent<ActionScheduler>().CancelCurrentAction();
             }
             

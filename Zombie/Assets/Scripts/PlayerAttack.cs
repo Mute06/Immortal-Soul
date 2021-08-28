@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("We Hit" + enemy.name);
                 var healthScript = enemy.GetComponent<Health>();
                 if (healthScript != null)
-                    healthScript.TakeDamage(null, AttackDamage);
+                    healthScript.TakeDamage(gameObject, AttackDamage);
                 else
                 {
                     var enemyHealthScript = enemy.GetComponent<EnemyHealth>();
