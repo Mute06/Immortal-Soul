@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Attributes;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
             foreach (var enemy in hitEnemies)
             {
                 Debug.Log("We Hit" + enemy.name);
-                enemy.GetComponent<EnemyHealth>().TakeDamage(AttackDamage);
+                enemy.GetComponent<Health>().TakeDamage(null,AttackDamage);
                 Vector3 hitPosition = enemy.ClosestPointOnBounds(attackPoint.position);
                 GameObject partic = Instantiate(particles[Random.Range(0, particles.Length)], hitPosition,Quaternion.identity);
                 partic.transform.LookAt(transform);
