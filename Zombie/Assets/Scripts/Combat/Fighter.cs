@@ -20,7 +20,10 @@ namespace RPG.Combat
         [SerializeField] WeaponConfig defaultWeapon;
         [SerializeField]EnemyClass AIStates;
         [SerializeField] float Range = 0;
-        [SerializeField] GameObject shootpoint;
+        [SerializeField] Projectile projectile;
+        [SerializeField] Transform Shootpoint;
+        [SerializeField] float Damage;
+
         Health target;
         GameObject Player;
         Animator animator;
@@ -42,26 +45,11 @@ namespace RPG.Combat
         //}
         private void Start()
         {
-            RaycastHit hit;
-            if(Physics.Raycast(shootpoint.transform.position, GetAimLocation(),out hit))
-            {
-                if(hit.collider==Player.transform)
-                {
-
-                }
-            }
-            
-
             //AttachWeapon(currentWeaponConfig);
             //currentWeapon.ForceInit();              
         }
 
-        private Vector3 GetAimLocation()
-        {
-            CharacterController Targetcapsule = target.GetComponent<CharacterController>();
-            if (Targetcapsule == null) { return target.transform.position; }
-            return target.transform.position + Vector3.up * Targetcapsule.height / 2;
-        }
+  
 
         //public void EquipWeapon(WeaponConfig weapon)
         //{
@@ -79,8 +67,8 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
 
-           // if(target == null) { return; }
-          //  if (target.IsDead()) { return; }
+            if(target == null) { return; }
+            if (target.IsDead()) { return; }
             if(AIStates==EnemyClass.Enemey)
             {
                 if (!GetsInRange(Player.transform))
@@ -100,15 +88,15 @@ namespace RPG.Combat
                     GetComponent<Mover>().RunFrom();
                 }
             }
-           
 
-            //if (target.IsDead())
-            //{
-            //    Cancel();
-            //}
-            
 
-            
+            if (target.IsDead())
+            {
+                Cancel();
+            }
+
+
+
         }
 
         public bool CanAttack(GameObject Combattarget)
@@ -210,6 +198,8 @@ namespace RPG.Combat
 
         void Shoot()
         {
+            Projectile projectileInstance = Instantiate(projectile, Shootpoint.position, Quaternion.identity);
+            projectileInstance.SetTarget(target, gameObject, Damage);
             Hit();
         }
 

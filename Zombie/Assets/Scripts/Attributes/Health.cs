@@ -4,6 +4,7 @@ using RPG.Saving;
 using RPG.Stats;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace RPG.Attributes
 {
@@ -94,20 +95,31 @@ namespace RPG.Attributes
 
         private void Die()
         {
-            if (isDead) { return; }
+            if (isDead) 
+            {
+                
+                return; 
+            }
 
             if(gameObject.CompareTag("Player"))
             {
                 GetComponent<CharacterController>().enabled = false;
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
             }
             else
             {
                 GetComponent<CapsuleCollider>().enabled = false;
             }
-            
+
             isDead = true;
-            GetComponent<Animator>().SetTrigger("dead");
-            GetComponent<ActionScheduler>().CancelCurrentAction();
+            if (!gameObject.CompareTag("Player"))
+            {
+                GetComponent<Animator>().SetTrigger("dead");
+                GetComponent<ActionScheduler>().CancelCurrentAction();
+            }
+            
+            
+            
         }
         public void Heal(float HP)
         {
