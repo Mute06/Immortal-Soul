@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Attributes;
 
 public class Granade : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Granade : MonoBehaviour
     public float radius = 5f;
     public float force = 700f;
     public LayerMask enemyLayer;
+    public float damage = 20f;
 
     public GameObject explosionEffect;
 
@@ -39,7 +41,7 @@ public class Granade : MonoBehaviour
             }
             if (IsInsideLayerMask(nearObject.gameObject.layer, enemyLayer))
             {
-                //damage enemys
+                nearObject.GetComponent<Health>().TakeDamage(gameObject,damage);
             }
         }
             //Add force or damage them

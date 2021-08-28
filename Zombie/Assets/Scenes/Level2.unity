@@ -4198,6 +4198,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1673319703}
     m_Modifications:
+    - target: {fileID: 800617128, guid: 31346a29c4a92284d87827b5a09b075b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800617128, guid: 31346a29c4a92284d87827b5a09b075b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4929401719627451416, guid: 31346a29c4a92284d87827b5a09b075b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4246,7 +4254,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 800617129, guid: 31346a29c4a92284d87827b5a09b075b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 31346a29c4a92284d87827b5a09b075b, type: 3}
 --- !u!65 &5977422251433747199
 BoxCollider:

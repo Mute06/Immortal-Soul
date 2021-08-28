@@ -5,6 +5,7 @@ using RPG.Stats;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace RPG.Attributes
 {
@@ -12,6 +13,8 @@ namespace RPG.Attributes
 
     public class Health : MonoBehaviour//,ISavable
     {
+        public Slider healthBarSlider;
+
         bool isDead=false;
         [SerializeField] float maxRegen=70;
         LazyValue<float> health;
@@ -26,7 +29,10 @@ namespace RPG.Attributes
         }
 
 
-
+        public void SetHealth()
+        {
+            healthBarSlider.value = HEALTH;
+        }
 
 
 
@@ -76,6 +82,27 @@ namespace RPG.Attributes
                 takeDamge.Invoke(Damage);
             }
 
+        }
+        public void TakeDamage(GameObject Instigator, float Damage, bool isPlayer)
+        {
+            HEALTH = Mathf.Max(HEALTH - Damage, 0);
+
+
+            if (HEALTH <= 0 && !isDead)
+            {
+                onDie.Invoke();
+                //AwardExperience(Instigator);
+                Die();
+            }
+            else
+            {
+                takeDamge.Invoke(Damage);
+            }
+
+            if (isPlayer)
+            {
+                SetHealth();
+            }
         }
 
         private void AwardExperience(GameObject Instigator)
@@ -127,6 +154,14 @@ namespace RPG.Attributes
         public void Heal(float HP)
         {
             HEALTH = Mathf.Min(HEALTH + HP, GetMAXHealtPoints());
+        }
+        public void Heal(float HP, bool isPlayer)
+        {
+            HEALTH = Mathf.Min(HEALTH + HP, GetMAXHealtPoints());
+            if (isPlayer)
+            {
+                SetHealth();
+            }
         }
 
         public float GetMAXHealtPoints()

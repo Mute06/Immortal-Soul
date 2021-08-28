@@ -128,6 +128,10 @@ MonoBehaviour:
   rightHandTransfrom: {fileID: 0}
   defaultWeapon: {fileID: 0}
   AIStates: 1
+  Range: 10
+  projectile: {fileID: 0}
+  Shootpoint: {fileID: 0}
+  Damage: 0
 --- !u!114 &9115278453281850400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3282a396229cf4eaa0d2079f549190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarSlider: {fileID: 0}
   maxRegen: 70
   takeDamge:
     m_PersistentCalls:
@@ -147,7 +152,7 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
-  HEALTH: 50
+  HEALTH: 100
 --- !u!114 &9115278453281850409
 MonoBehaviour:
   m_ObjectHideFlags: 0

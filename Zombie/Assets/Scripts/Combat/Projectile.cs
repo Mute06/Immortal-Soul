@@ -47,16 +47,18 @@ namespace RPG.Combat
 
         private Vector3 GetAimLocation()
         {
-            CapsuleCollider Targetcapsule = target.GetComponent<CapsuleCollider>();
-            if (Targetcapsule == null) { return target.transform.position; }
-            return target.transform.position + Vector3.up * Targetcapsule.height / 2;
+            
+            //if (target == null) { return Vector3.up / 2; }
+            //var Targetcapsule = target.GetComponent<CharacterController>();
+            //if (Targetcapsule == null) { Debug.Log("CharacterCOntroller not found"); return target.transform.position; }
+            return target.transform.position ;
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) { return; }
             if (target.IsDead()) { return; }
-            target.TakeDamage(Instigator,damage);
+            target.TakeDamage(Instigator,damage,true);
             if (other.CompareTag("Player"))
             {
                 effects.PlayEffects(other.transform);
