@@ -96,7 +96,15 @@ namespace RPG.Attributes
         {
             if (isDead) { return; }
 
-            //GetComponent<CapsuleCollider>().enabled = false;
+            if(gameObject.CompareTag("Player"))
+            {
+                GetComponent<CharacterController>().enabled = false;
+            }
+            else
+            {
+                GetComponent<CapsuleCollider>().enabled = false;
+            }
+            
             isDead = true;
             GetComponent<Animator>().SetTrigger("dead");
             GetComponent<ActionScheduler>().CancelCurrentAction();

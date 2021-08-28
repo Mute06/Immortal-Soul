@@ -25,25 +25,28 @@ namespace RPG.Scenemanagemnt
         }
 
 
+
         IEnumerator Transition(Collider other)
         {          
             DontDestroyOnLoad(gameObject);
 
             Fader fader = FindObjectOfType<Fader>();
-            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            //SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+
+           
             other.GetComponent<PlayerController>().enabled = false;
 
             yield return fader.Fadeout(Fadeout_IN_Time);            
-            savingWrapper.Save();
+            //savingWrapper.Save();
             yield return SceneManager.LoadSceneAsync(Scenenumber);
             PlayerController NewplayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             NewplayerController.enabled = false;
-            savingWrapper.Load();
+            //savingWrapper.Load();
 
             Portal otherPortal = GetOtherPortal();            
             UpdatePlayer(otherPortal);
 
-            savingWrapper.Save();
+            //savingWrapper.Save();
 
             yield return new WaitForSeconds(0.5f);
             yield return fader.FadeIn(Fadeout_IN_Time);

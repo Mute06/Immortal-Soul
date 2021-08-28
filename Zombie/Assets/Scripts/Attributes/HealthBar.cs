@@ -14,8 +14,8 @@ namespace RPG.Attributes
         // Update is called once per frame
         void Update()
         {
-            Foreground.localScale = new Vector3(health.GetFractionHealth(), 1, 1);
-            if(Mathf.Approximately(health.GetHealtPoints(),0) || Mathf.Approximately(health.GetFractionHealth(),1))
+            Foreground.localScale = new Vector3(health.GetHealtPoints(), 1, 1);
+            if(Mathf.Approximately(health.GetHealtPoints(),0)) //|| Mathf.Approximately(health.GetFractionHealth(),1))
             {
                 canvas.gameObject.SetActive(false);
             }

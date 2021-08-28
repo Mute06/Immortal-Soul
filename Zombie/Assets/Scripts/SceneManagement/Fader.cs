@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RPG.Scenemanagemnt
 {
@@ -9,6 +10,7 @@ namespace RPG.Scenemanagemnt
     {
         CanvasGroup canvasGroup;
         Coroutine currentlyActiveCoroutine;
+        bool isloaded ;
         private void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
@@ -17,6 +19,19 @@ namespace RPG.Scenemanagemnt
         public void FadeOutImmediately()
         {
             canvasGroup.alpha = 1;
+        }
+
+        IEnumerator Start()
+        {
+            if (SceneManager.GetActiveScene().isLoaded || isloaded)
+            {
+                yield return Fadeout(2);
+                yield return FadeIn(2);
+                
+                isloaded = true;
+
+
+            }
         }
 
         public Coroutine Fadeout(float time)
