@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 741280786410924463}
   - component: {fileID: 1198653554954052043}
   - component: {fileID: 3093979961154849456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lever arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 707206924689091804}
   - component: {fileID: 5129507353515094262}
   - component: {fileID: 4677202591579531056}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 8869143258884606628}
   - component: {fileID: 3186382784171156520}
   - component: {fileID: 4846394210885159036}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8784769809998500181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: granade_puppet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
