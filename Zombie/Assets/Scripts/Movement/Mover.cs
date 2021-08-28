@@ -18,7 +18,7 @@ namespace RPG.Movement
         [SerializeField] float MaxNaveLEngth = 40;
         [SerializeField] float multiplyBy;
         GameObject player;
-        EnemyClass AIStates;
+
         private void Awake()
         {
             health = GetComponent<Health>();
@@ -45,10 +45,6 @@ namespace RPG.Movement
             return true;
         }
 
-        public void TurnDirection()
-        {
-
-        }
 
         public void Moveto(Vector3 Destination,float speedFratction)
         {
@@ -106,7 +102,8 @@ namespace RPG.Movement
             Vector3 velocity = _navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-            //GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+            GetComponent<Animator>().SetFloat("Speed", speed);
+           
         }
 
         public void Cancel()
