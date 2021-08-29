@@ -328,6 +328,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  damage: 40
   explosionEffect: {fileID: 1121192042590650, guid: 56d2f1dcd6433554abbcf4e5b3b4131f, type: 3}
 --- !u!114 &2390958352605730412
 MonoBehaviour:

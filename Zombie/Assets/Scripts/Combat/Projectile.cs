@@ -48,7 +48,7 @@ namespace RPG.Combat
         private Vector3 GetAimLocation()
         {
             
-            //if (target == null) { return Vector3.up / 2; }
+            if (target == null) { return Vector3.up / 2; }
             //var Targetcapsule = target.GetComponent<CharacterController>();
             //if (Targetcapsule == null) { Debug.Log("CharacterCOntroller not found"); return target.transform.position; }
             return target.transform.position ;

@@ -157,7 +157,7 @@ namespace RPG.Attributes
         }
         public void Heal(float HP, bool isPlayer)
         {
-            HEALTH = Mathf.Min(HEALTH + HP, GetMAXHealtPoints());
+            HEALTH = Mathf.Min(HEALTH + HP, 100f);
             if (isPlayer)
             {
                 SetHealth();

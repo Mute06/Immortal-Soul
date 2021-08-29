@@ -62,4 +62,10 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Heal
+    clip: {fileID: 8300000, guid: 77698270bafecc54ab33940401a4e6e2, type: 3}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   mixer: {fileID: 24300002, guid: 01a9a56fad857074eb2c9d16a7f79147, type: 2}
