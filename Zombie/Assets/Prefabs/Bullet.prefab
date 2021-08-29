@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f641c2ea011b93d40b25cc8344b16f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSpeed: 5
+  ProjectileSpeed: 10
   damage: 2
   isHoming: 0
   fireBallEffect: {fileID: 0}
