@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2407481206754484162}
   - component: {fileID: 100392744168207389}
   - component: {fileID: -2445241451567675256}
+  - component: {fileID: 3599902846943033177}
+  - component: {fileID: 1120064588002107683}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -130,3 +132,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodPartic: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+--- !u!135 &3599902846943033177
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773351454203327897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000005
+  m_Center: {x: 0.000004768376, y: 0, z: -0.0000011920943}
+--- !u!54 &1120064588002107683
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773351454203327897}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
